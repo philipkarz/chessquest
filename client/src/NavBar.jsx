@@ -17,7 +17,7 @@ const NavBar = (props) => {
 					<span>
 						<Link to="/login">Log In</Link>
 						<Link to="/signup">Sign Up</Link>
-						<Link to="/search">Search</Link>
+						<button>Search</button> <input type="text" placeholder="search events"/>
 					</span>
 				)
 			}
