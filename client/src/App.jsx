@@ -1,7 +1,6 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
-
 import EditProfile from './views/EditProfile'
 import NavBar from './NavBar'
 import LogIn from './views/LogIn'
@@ -51,15 +50,15 @@ class App extends React.Component {
 						return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 					}} />
 
-					<Route path="/profile" render={() => {
+					<Route path="/profile" render={(props) => {
 						return currentUser
-							? <Profile />
+							? <Profile {...props} user={this.state.currentUser} />
 							: <Redirect to="/login" />
 					}} />
 
-					<Route path="/editprofile" render={() => {
+					<Route path="/editprofile" render={(props) => {
 						return currentUser
-							? <EditProfile />
+							? <EditProfile {...props} user={this.state.currentUser} />
 							: <Redirect to="/profile" />	
 							
 					}} />

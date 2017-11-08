@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  /* background: url('https://static.seekingalpha.com/uploads/2016/8/24/340087-14720458484262683_origin.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  color: black!important;
+  font-size: large;
 }
 
 .App-logo {
@@ -25,4 +31,30 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* .Home {
+  
+} */
+
+.Search {
+  text-align: center;
+  width:  50%;
+}
+
+.NavBar {
+  width: 100%!important;
+}
+
+button {
+background: dodgerblue!important;
+}
+
+.EditProfile {
+  width:  50%;
+}
+
+a {
+  color: darkslategrey;
+  display: inline-block!important;
 }

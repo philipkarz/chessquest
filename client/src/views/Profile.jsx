@@ -1,10 +1,16 @@
 import React from 'react'
 import axios from 'axios'
+import Search from './Search'
+
 // import EditProfile from './EditProfile'
 import { Link } from 'react-router-dom'
 // import vipImage from '../vip.jpg'
 
 class Profile extends React.Component {
+
+	componentDidMount() {
+
+	}
 
 	deleteAcct(id) {
         axios({
@@ -16,14 +22,16 @@ class Profile extends React.Component {
         })
 	}
 	render() {
+		const { user } = this.props
+		console.log(user)
 	return (
+		
 		<div className='Profile'>
-			<h1>Welcome!</h1>
+			<h1>Welcome {user.name}!</h1>
 			{/* <img src={vipImage} alt="VIP" /> */}
-			<button>Find chess events</button>
 			<button onClick={this.deleteAcct.bind(this)}>Delete Account</button>
-			<Link to='/editprofile'>Edit Info </Link>
-			
+			<Link to='/editprofile'><button> Edit Info </button></Link>
+			<Search />
 			
 		</div>
 	)

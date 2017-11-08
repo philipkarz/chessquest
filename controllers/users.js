@@ -33,6 +33,7 @@ module.exports = {
 		User.findById(req.params.id, (err, user) => {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
+				console.log('token time')
 				res.json({success: true, message: "User updated.", user})
 			})
 		})

@@ -1,9 +1,20 @@
 import React from 'react'
+import axios from 'axios'
 import clientAuth from '../clientAuth'
 
 class EditProfile extends React.Component {
 	state = {
-		fields: { email: '', password: ''}
+		fields: { email: '', password: '', name: ''}
+	}
+
+	componentDidMount() {
+		this.setState({
+			fields: {
+				name: this.props.user.name,
+				email: this.props.user.email,
+				password: this.props.user.password
+			}
+		})
 	}
 
 	onInputChange(evt) {
@@ -17,22 +28,26 @@ class EditProfile extends React.Component {
 
 	onFormSubmit(evt) {
 		evt.preventDefault()
-		clientAuth.logIn(this.state.fields).then(user => {
-			this.setState({ fields: { email: '', password: '' } })
-			if(user) {
-				this.props.history.push('/')
-			}
-		})
+			axios({
+				method: 'patch', 
+				url: `/chess/users/${this.props.user._id}`,
+				data: this.state.fields,
+			})
+			.then(res => {
+				this.props.history.push(`/profile`)
+				this.setState({ fields: res.data })
+			})
 	}
 	
 	render() {
-		const { email, password } = this.state.fields
+		let { email, password, name } = this.state.fields
+		console.log(this.state.fields)
 		return (
 			<div className='EditProfile'>
 				<h1>Edit Info</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-					<input type="text" placeholder="Email" name="email" value={email} />
-					<input type="password" placeholder="Password" name="password" value={password} />
+					<input type="text"  name="name" value={name} />
+					<input type="text"  name="email" value={email} />
 					<button>Submit</button>
 				</form>
 			</div>

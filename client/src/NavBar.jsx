@@ -29,7 +29,7 @@ const NavBar = (props) => {
 					</span>
 				)
 			}
-			<Search />
+			
 		</div>
 	)
 }

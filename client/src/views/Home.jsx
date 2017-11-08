@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Home = (props) => {
+	console.log(props)
 	return (
 		<div className='Home'>
-			<h1>ChessQuest</h1>
+			<h1>Welcome to ChessQuest!</h1>
 		</div>
 	)
 }
