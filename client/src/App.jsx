@@ -2,11 +2,15 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
 
+import EditProfile from './views/EditProfile'
 import NavBar from './NavBar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
+import Profile from './views/Profile'
 import Home from './views/Home'
+import Search from './views/Search'
+
 
 class App extends React.Component {
 	state = { currentUser: null }
@@ -26,6 +30,7 @@ class App extends React.Component {
 	
 	render() {
 		const { currentUser } = this.state
+		console.log(currentUser)
 		return (
 			<div className='App'>
 
@@ -46,11 +51,23 @@ class App extends React.Component {
 						return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 					}} />
 
-					{/* <Route path="/vip" render={() => {
+					<Route path="/profile" render={() => {
 						return currentUser
-							? <VIP />
+							? <Profile />
 							: <Redirect to="/login" />
-					}} /> */}
+					}} />
+
+					<Route path="/editprofile" render={() => {
+						return currentUser
+							? <EditProfile />
+							: <Redirect to="/profile" />	
+							
+					}} />
+
+					<Route path="search" render={() => {
+							<Search />	
+							
+					}} />
 
 					<Route path="/" component={Home} />
 

@@ -5,7 +5,7 @@ app = express(),
 logger = require('morgan'),
 bodyParser = require('body-parser'),
 mongoose = require('mongoose'),
-MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/home',
+MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/chess',
 PORT = process.env.PORT || 3001,
 usersRoutes = require('./routes/users.js')
 
@@ -17,14 +17,14 @@ console.log(err || `Connected to MongoDB.`)
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
-app.get('/api', (req, res) => {
-res.json({message: "API root."})
+app.get('/chess', (req, res) => {
+res.json({message: "Root."})
 })
 
-app.use('/api/users', usersRoutes)
-app.use('*', (req, res) => {
+app.use('/chess/users', usersRoutes)
+// app.use('*', (req, res) => {
 // res.sendFile(`${__dirname}/client/build/index.html`)
-})
+// })
 
 
 app.listen(PORT, (err) => {

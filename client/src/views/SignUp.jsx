@@ -3,6 +3,7 @@ import clientAuth from '../clientAuth'
 
 // sign up form behaves almost identically to log in form. We could create a flexible Form component to use for both actions, but for now we'll separate the two:
 class SignUp extends React.Component {
+
 	state = {
 		fields: { name: '', email: '', password: ''}
 	}
@@ -18,17 +19,20 @@ class SignUp extends React.Component {
 
 	onFormSubmit(evt) {
 		evt.preventDefault()
-		clientAuth.signUp(this.state.fields).then(user => {
+		clientAuth.signUp(this.state.fields).then(data => {
 			this.setState({ fields: { name: '', email: '', password: '' } })
-			if(user) {
-				this.props.onSignUpSuccess(user)
-				this.props.history.push('/')
+			if(data.success) {
+				this.props.onSignUpSuccess(data.token)
+				console.log(this.props.history)
+				this.props.history.push('/vip')
 			}
 		})
 	}
 	
 	render() {
+		console.log(this.props.history)
 		const { name, email, password } = this.state.fields
+		this.props.history.push('/')
 		return (
 			<div className='SignUp'>
 				<h1>Sign Up</h1>

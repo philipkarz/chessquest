@@ -4,9 +4,7 @@ const signToken = require('../serverAuth.js').signToken
 module.exports = {
 	// list all users
 	index: (req, res) => {
-		User.find({}, (err, users) => {
-			res.json(users)
-		})
+		
 	},
 
 	// get one user
@@ -20,10 +18,12 @@ module.exports = {
 
 	// create a new user
 	create: (req, res) => {
+		console.log(req.body)
 		User.create(req.body, (err, user) => {
 			if(err) return res.json({success: false, code: err.code})
 			// once user is created, generate a token to "log in":
 			const token = signToken(user)
+			console.log(token)
 			res.json({success: true, message: "User created. Token attached.", token})
 		})
 	},
