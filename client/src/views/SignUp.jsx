@@ -20,19 +20,20 @@ class SignUp extends React.Component {
 	onFormSubmit(evt) {
 		evt.preventDefault()
 		clientAuth.signUp(this.state.fields).then(data => {
+			console.log(data)
 			this.setState({ fields: { name: '', email: '', password: '' } })
 			if(data.success) {
 				this.props.onSignUpSuccess(data.token)
 				console.log(this.props.history)
-				this.props.history.push('/vip')
+				this.props.history.push('/profile')
 			}
 		})
 	}
 	
 	render() {
-		console.log(this.props.history)
+		// console.log(this.props.history)
 		const { name, email, password } = this.state.fields
-		this.props.history.push('/')
+		// this.props.history.push('/profile')
 		return (
 			<div className='SignUp'>
 				<h1>Sign Up</h1>
@@ -40,7 +41,7 @@ class SignUp extends React.Component {
 					<input type="text" placeholder="Name" name="name" value={name} />
 					<input type="text" placeholder="Email" name="email" value={email} />
 					<input type="password" placeholder="Password" name="password" value={password} />
-					<button>Log In</button>
+					<button>Sign In</button>
 				</form>
 			</div>
 		)

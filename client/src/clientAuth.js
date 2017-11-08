@@ -20,7 +20,7 @@ function getCurrentUser() {
 }
 
 function logIn(credentials) {
-	return clientAuth({ method: 'post', url: '/api/users/authenticate', data: credentials })
+	return axios({ method: 'post', url: '/chess/users/authenticate', data: credentials })
 		.then(res => {
 			const token = res.data.token
 			if(token) {
@@ -34,6 +34,7 @@ function logIn(credentials) {
 
 // logIn and signUp functions could be combined into one since the only difference is the url we're sending a request to..
 function signUp(userInfo) {
+	console.log(userInfo)
 	return clientAuth({ method: 'post', url: '/chess/users', data: userInfo})
 		.then(res => {
 			const token = res.data.token
