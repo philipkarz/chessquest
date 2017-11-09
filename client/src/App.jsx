@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
 import EditProfile from './views/EditProfile'
 import NavBar from './NavBar'
+import Footer from './Footer'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
@@ -10,6 +11,7 @@ import Profile from './views/Profile'
 import Home from './views/Home'
 import Search from './views/Search'
 import EventShow from './views/EventShow'
+import EditEvent from './views/EditEvent'
 
 
 class App extends React.Component {
@@ -35,7 +37,7 @@ class App extends React.Component {
 			<div className='App'>
 
 				<NavBar currentUser={currentUser} />
-
+					
 				<Switch>
 
 					<Route path="/login" render={(props) => {
@@ -66,20 +68,24 @@ class App extends React.Component {
 
 					<Route path="/search" component={Search} />
 
-					<Route path="/events" component={EventShow} />
+					<Route path="/events/:id/edit" component={EditEvent} />
+
+					<Route path="/events/:id" component={EventShow} />
+
+					
 
 					<Route path="/" component={Home} />
 
-					{/* <Route path="/" render={(props) => {
-						return currentUser
-							? <Home {...props} user={this.state.currentUser} />
-							: <Redirect to="/profile" />	
-							
-					}} /> */}
+					
+
+					
 
 				</Switch>
+				<Footer />
 			</div>
+			
 		)
+		
 	}
 }
 

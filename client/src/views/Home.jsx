@@ -6,7 +6,12 @@ const Home = (props) => {
 	return (
 		<div className='Home'>
 			<h1>Welcome to ChessQuest!</h1>
-			<Search history={props.history}/>
+			<div>
+				<img className='logo' src='http://newmail-ng.com/wp-content/uploads/2014/01/Chess-2.jpg'></img>
+			</div>
+			<br />
+		<Search history={props.history}/>
+			
 		</div>
 		
 	)

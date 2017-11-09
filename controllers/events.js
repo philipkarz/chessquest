@@ -27,6 +27,7 @@ Events = require('../models/Event.js')
     
         // update an existing event
         update: (req, res) => {
+            console.log(req.body)
             Events.findById(req.params.id, (err, event) => {
                 Object.assign(event, req.body)
                 event.save((err, updatedevent) => {

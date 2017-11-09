@@ -11,7 +11,7 @@ eventsRouter.get('/:id', eventsCtrl.show)
 eventsRouter.post('/', verifyToken, eventsCtrl.create)
 eventsRouter.patch('/:id', eventsCtrl.update)
 eventsRouter.delete('/:id', eventsCtrl.destroy)
-// eventsRouter.get('/:id/edit', eventsCtrl.edit)
+
 
 
 module.exports = eventsRouter

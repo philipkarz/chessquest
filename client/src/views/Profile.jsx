@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Search from './Search'
 
 
 // import EditProfile from './EditProfile'
@@ -36,15 +37,16 @@ class Profile extends React.Component {
 		
 		<div className='Profile'>
 			<h1>Welcome {user.name}!</h1>
+			
 			{/* <img src={vipImage} alt="VIP" /> */}
-			<button onClick={this.deleteAcct.bind(this)}>Delete Account</button>
+			<button className='delete' onClick={this.deleteAcct.bind(this)}>Delete Account</button>
 			<Link to='/editprofile'><button> Edit Info </button></Link>
 			<div>
-            <h1>Your Events</h1>
+            <h1>Your Schedule</h1>
             {this.state.events.map(event => {
                 return (
                     <div key={event._id}>
-                        <h2><Link to={`/events`} id={event._id} >{event.name}</Link></h2>
+                        <h2><Link to={`/events/${event._id}`} id={event._id} >{event.name}, {event.time}</Link><input type="checkbox" id="confirmField"/></h2>
                     
                     </div>
                 )

@@ -60,11 +60,12 @@ class Search extends React.Component {
         return(
             <div className='Event'>
                 <form onChange={this.onInputChange.bind(this)} onSubmit={this.addEvent.bind(this)}>
-                    <button>Add</button>
+                    <button>Create Event</button>
                     <input type="text" placeholder="name" name='name' value={name}/>
                     <input type="text" placeholder="location" name='location' value={location}/>
                     <input type="text" placeholder="time" name='time' value={time}/>
-                    <input type="text" placeholder="description" name='description' value={description}/>
+                    <textarea type="text" placeholder="description" name='description' value={description}/>
+                    
                 </form>
                 
             </div>

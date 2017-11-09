@@ -8,9 +8,11 @@ class EventShow extends React.Component {
 
     componentDidMount() {
         const id = this.props.match.params.id
-        axios({ method: 'get', url: `chess/events/${id}` })
+        console.log('show', id)
+        axios({ method: 'get', url: `/chess/events/${id}` })
         .then(res => {
-            this.setState({ post: res.data })
+            console.log(res.data)
+            this.setState({ event: res.data })
         })
     }
 
@@ -31,18 +33,37 @@ class EventShow extends React.Component {
         const event = this.state.event
         console.log('eventshow', this.props)
 
-        if(!event) return <div>Loading...</div>
+        if(!event) return <div className='loading'>Loading...</div>
         
         return(
             <div>
-            <h1>Single Event View</h1>
-            <h2>{event.name}</h2>
-            <p>{event.location}</p>
-            <p>{event.time}</p>
-            <p>{event.description}</p>
+            
+            <h1>Event View</h1>
             <hr />
-            <Link to={`events/${event._id}/edit`}>Edit</Link>
-            <button onClick={this.onDelete.bind(this)}>Delete</button>
+            <div className='event'>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                     <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>{event.name}</td>
+                    <td>{event.location}</td>
+                    <td>{event.time}</td>
+                    <td>{event.description}</td>
+                </tr>
+                </tbody>
+                </table>
+            
+            </div>
+            <hr />
+            <Link to={`/events/${event._id}/edit`}>Edit</Link>
+            <button className='delete' onClick={this.onDelete.bind(this)}>Delete</button>
             <Link to="/profile">Back</Link>
             </div>
         )

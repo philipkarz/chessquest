@@ -38,12 +38,13 @@
 } */
 
 .Search {
-  text-align: center;
-  width:  50%;
+  width: 50%!important;
 }
 
 .NavBar {
-  width: 100%!important;
+  /* width: 100%!important; */
+  height: 50px;
+  background: darkgray;
 }
 
 button {
@@ -51,10 +52,42 @@ background: dodgerblue!important;
 }
 
 .EditProfile {
-  width:  50%;
+  text-align: center;
+  width: 50%;
 }
 
 a {
   color: darkslategrey;
   display: inline-block!important;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.logo {
+height: 200px;
+width: 50%;
+float: left;
+}
+
+.Footer {
+  float: left;
+}
+
+.loading {
+  background: url('http://media.idownloadblog.com/wp-content/uploads/2016/10/Mac-Spinning-Wheel.jpg');
+  animation: loading-spin infinite 20s linear;
+  height: 20px;
+}
+
+@keyframes loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.event {
+  border: 2px solid grey;
+}
+
+.delete {
+  background: #FF0000!important;
 }
