@@ -1,11 +1,14 @@
 import React from 'react'
+import Search from './Search'
 
 const Home = (props) => {
-	console.log(props)
+	console.log('home props', props);
 	return (
 		<div className='Home'>
 			<h1>Welcome to ChessQuest!</h1>
+			<Search history={props.history}/>
 		</div>
+		
 	)
 }
 

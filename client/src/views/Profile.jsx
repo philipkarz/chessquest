@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Search from './Search'
+
 
 // import EditProfile from './EditProfile'
 import { Link } from 'react-router-dom'
@@ -8,8 +8,16 @@ import { Link } from 'react-router-dom'
 
 class Profile extends React.Component {
 
-	componentDidMount() {
+	state = { events: [] }
 
+	componentDidMount() {
+		axios({
+			method: 'get',
+			url: '/chess/events'
+		}).then(res => {
+			console.log('response ', res)
+			this.setState({ events: res.data })
+		})
 	}
 
 	deleteAcct(id) {
@@ -23,7 +31,7 @@ class Profile extends React.Component {
 	}
 	render() {
 		const { user } = this.props
-		console.log(user)
+		console.log(this.state)
 	return (
 		
 		<div className='Profile'>
@@ -31,7 +39,17 @@ class Profile extends React.Component {
 			{/* <img src={vipImage} alt="VIP" /> */}
 			<button onClick={this.deleteAcct.bind(this)}>Delete Account</button>
 			<Link to='/editprofile'><button> Edit Info </button></Link>
-			<Search />
+			<div>
+            <h1>Your Events</h1>
+            {this.state.events.map(event => {
+                return (
+                    <div key={event._id}>
+                        <h2><Link to={`/events`} id={event._id} >{event.name}</Link></h2>
+                    
+                    </div>
+                )
+            })}
+            </div>
 			
 		</div>
 	)

@@ -7,7 +7,8 @@ bodyParser = require('body-parser'),
 mongoose = require('mongoose'),
 MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/chess',
 PORT = process.env.PORT || 3001,
-usersRoutes = require('./routes/users.js')
+usersRoutes = require('./routes/users.js'),
+eventsRoutes = require('./routes/events.js')
 
 
 mongoose.connect(MONGODB_URI, (err) => {
@@ -23,6 +24,7 @@ res.json({message: "Root."})
 })
 
 app.use('/chess/users', usersRoutes)
+app.use('/chess/events', eventsRoutes)
 // app.use('*', (req, res) => {
 // res.sendFile(`${__dirname}/client/build/index.html`)
 // })

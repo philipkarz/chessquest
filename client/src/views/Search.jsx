@@ -6,21 +6,38 @@ import clientAuth from '../clientAuth'
 class Search extends React.Component {
 
 	state = {
-		fields: { search: ''}
+		fields: { name: '', location: '', time: '', description: '', }
     }
 
-    searchEvents(evt) {
+    // searchEvents(evt) {
+    //     evt.preventDefault()
+    //     var searchTerm =  evt.target.search_input.value
+    //     var location =  evt.target.search_location.value
+    //     console.log(searchTerm)
+    //     axios({
+    //         method: 'get', 
+    //         url: `http://api.eventful.com/rest/events/search?...&keywords=${searchTerm}&location=${location}`,
+    //         data: this.state.fields,
+    //     })
+    //     .then(res => {
+    //       console.log(res.data)  
+    //     })
+       
+
+    // }
+
+      addEvent(evt) {
         evt.preventDefault()
-        var searchTerm =  evt.target.search_input.value
-        var location =  evt.target.search_location.value
-        console.log(searchTerm)
+        // console.log(this.state.fields)
+        console.log('props in add event', this.props);
+
         axios({
-            method: 'get', 
-            url: `http://api.eventful.com/rest/events/search?...&keywords=${searchTerm}&location=${location}`,
+            method: 'post', 
+            url: '/chess/events',
             data: this.state.fields,
         })
         .then(res => {
-          console.log(res.data)  
+           this.props.history.push('/profile')
         })
        
 
@@ -37,15 +54,17 @@ class Search extends React.Component {
 	}
     
     render() {
-
-        var search = this.state.search
-        var location = this.state.location
+        console.log('props in render', this.props);
+        var event = this.state.event
+        const { name, location, time, description } = this.state
         return(
-            <div className='Search'>
-                <form onChange={this.onInputChange.bind(this)} onSubmit={this.searchEvents.bind(this)}>
-                    <button>Find Events</button>
-                    <input type="text" placeholder="events" name='search_input' value={search}/>
-                    <input type="text" placeholder="location" name='search_location' value={location}/>
+            <div className='Event'>
+                <form onChange={this.onInputChange.bind(this)} onSubmit={this.addEvent.bind(this)}>
+                    <button>Add</button>
+                    <input type="text" placeholder="name" name='name' value={name}/>
+                    <input type="text" placeholder="location" name='location' value={location}/>
+                    <input type="text" placeholder="time" name='time' value={time}/>
+                    <input type="text" placeholder="description" name='description' value={description}/>
                 </form>
                 
             </div>

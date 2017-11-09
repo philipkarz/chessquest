@@ -3,7 +3,9 @@ Events = require('../models/Event.js')
 
     module.exports = {
         index: (req, res) => {
-            
+            Events.find({}, (err, events) => {
+                res.json(events)
+            })
         },
     
         show: (req, res) => {
@@ -15,9 +17,11 @@ Events = require('../models/Event.js')
         // create a new event
         create: (req, res) => {
             console.log(req.body)
-            Events.create(req.body, (err, event) => {
-                if(err) return res.json({success: false, code: err.code})
-                res.json({success: true, message: "event created", token})
+            console.log(req.user)
+            const newEvent = new Events(req.body)
+            newEvent.user = req.user
+            newEvent.save((err, event) => {
+                res.json({success: true, message: "Event created...", event})
             })
         },
     
