@@ -26,7 +26,7 @@ class Profile extends React.Component {
             url: `/chess/users/${id}`,
         })
         .then(res => {
-            // this.props.history.push('/login')
+            this.props.history.push('/login')
         })
 	}
 	render() {
