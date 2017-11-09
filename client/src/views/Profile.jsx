@@ -37,7 +37,9 @@ class Profile extends React.Component {
 		
 		<div className='Profile'>
 			<h1>Welcome {user.name}!</h1>
-			
+			{/* <div>
+			<img className='logo' src='http://newmail-ng.com/wp-content/uploads/2014/01/Chess-2.jpg'></img>
+			</div> */}
 			{/* <img src={vipImage} alt="VIP" /> */}
 			<button className='delete' onClick={this.deleteAcct.bind(this)}>Delete Account</button>
 			<Link to='/editprofile'><button> Edit Info </button></Link>

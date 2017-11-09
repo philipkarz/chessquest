@@ -33,9 +33,9 @@
   to { transform: rotate(360deg); }
 }
 
-/* .Home {
-  
-} */
+.Home {
+  background: url('https://blogs-images.forbes.com/robertadams/files/2016/03/the-best-travel-websites-in-the-world-1200x800.jpg?width=960')
+}
 
 .Search {
   width: 50%!important;
