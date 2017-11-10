@@ -26,9 +26,6 @@ axios, express
 Client
 jwt-decode, milligram,react,react-dom,react-router-dom, react-scripts
 
-##Models
-![IMG](https://i.imgur.com/9Q7QwAG.png)
-
 
 ## Approach Taken
 
@@ -43,17 +40,25 @@ jwt-decode, milligram,react,react-dom,react-router-dom, react-scripts
 - Clone it 
 - Run NPM install in terminal
 
-
+##Models
+![IMG](https://i.imgur.com/9Q7QwAG.png)
 
 
 ## Planning Documentation
 
 User Stories: https://trello.com/b/bXycWxWW/planner
+- A user can login/logout
+- A user can edit/ delete thier profile
+- A user can create events
+- A user can edit/delete events
+- A user can search EventBrite API to find events to do
+- A user can specify the name, time, date, location, and description for thier events
+
 
 Wireframes: 
 - Home page: 
 - Main user page: 
-Models:
+
 
 
 
