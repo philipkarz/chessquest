@@ -62,9 +62,9 @@ class EventShow extends React.Component {
             
             </div>
             <hr />
-            <Link to={`/events/${event._id}/edit`}>Edit</Link>
+            <Link to={`/events/${event._id}/edit`}><button className='edit'>Edit</button></Link>
             <button className='delete' onClick={this.onDelete.bind(this)}>Delete</button>
-            <Link to="/profile">Back</Link>
+            <Link to="/profile"><button className='back'>Back</button></Link>
             </div>
         )
     }

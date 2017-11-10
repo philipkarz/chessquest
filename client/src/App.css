@@ -88,7 +88,7 @@ float: left;
 }
 
 .event {
-  border: 2px solid grey;
+  border: 2px solid dodgerblue;
 }
 
 .delete {
@@ -127,4 +127,12 @@ input {
   background: yellow;
  content: "\2606";
  position: absolute;
+}
+
+.edit {
+background: dodgerblue!important; 
+}
+
+.back {
+  background: darkgrey!important;
 }
