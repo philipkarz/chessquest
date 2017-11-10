@@ -2,10 +2,10 @@
 
 *An app that helps users schedule thier day.*
  
-Select Signup to create your account. Once logged in, click on Create Event to add an event to your schedule. The user will then be directed to thier profile where they can view thier events for the day. 
+In this day and age we have somany responsibilities its difficult to keep track of them all. Now thanks to EventWent you can plan your day so that you dont forget anything on your schedule. Start by clicking on Signup to create an account. Once logged in, click on Create Event to add an event to your schedule. The user will then be directed to thier profile where they can view thier events for the day.
 
-[Check out EventWent](https://gotripply.herokuapp.com/)
-
+[Check out EventWent]()
+![IMG](https://i.imgur.com/UcuDYs4.png)
 
 
 
@@ -17,6 +17,7 @@ Select Signup to create your account. Once logged in, click on Create Event to a
 - Axios
 - Milligram
 - Node.JS
+- Absolutely no WordPress
 
 **NPM packages**
 App
@@ -25,6 +26,8 @@ axios, express
 Client
 jwt-decode, milligram,react,react-dom,react-router-dom, react-scripts
 
+##Models
+![IMG](https://i.imgur.com/9Q7QwAG.png)
 
 
 ## Approach Taken
@@ -58,13 +61,14 @@ Models:
 
 ## Unresolved Problems & Major Hurdles
 - Everything involving React
+- Incorporating an API
 
 
   ​
 ## Future Features
 - A registered user should be able to search an API such as EventBrite to find events in thier area
 
-- A user can rate their experience of the activities they do (1-5 stars)
+- A user could organize events by day with a calendar
 
   ​
 
