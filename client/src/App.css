@@ -4,6 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
+  /* font-family: 'Philosopher', sans-serif; */
   color: black!important;
   font-size: large;
 }
@@ -52,8 +53,8 @@ background: dodgerblue!important;
 }
 
 .EditProfile {
-  text-align: center;
-  width: 50%;
+  text-align: left;
+  /* width: 50%; */
 }
 
 a {
@@ -90,4 +91,8 @@ float: left;
 
 .delete {
   background: #FF0000!important;
+}
+
+input {
+ text-align: left;
 }

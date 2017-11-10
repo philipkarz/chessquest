@@ -8,7 +8,7 @@ const Home = (props) => {
 			<h1>Welcome!</h1>
 			
 			<br />
-		<Search history={props.history}/>
+		{/* <Search history={props.history}/> */}
 			
 		</div>
 		

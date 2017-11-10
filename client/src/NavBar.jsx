@@ -24,7 +24,7 @@ const NavBar = (props) => {
 	
 					
 						<Link to="/signup">Sign Up</Link>
-						<button>Search</button> 
+			
 						
 					</span>
 				)
