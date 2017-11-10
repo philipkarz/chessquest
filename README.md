@@ -2,7 +2,7 @@
 
 *An app that helps users schedule thier day.*
  
-In this day and age we have somany responsibilities its difficult to keep track of them all. Now thanks to EventWent you can plan your day so that you dont forget anything on your schedule. Start by clicking on Signup to create an account. Once logged in, click on Create Event to add an event to your schedule. An event contains a name, time, location and description. Once the user creates an even, they will then be directed to thier profile where they can view thier events for the day.
+In this day and age we have so many responsibilities its difficult to keep track of them all. Now thanks to EventWent you can plan your day so that you wont forget anything on your schedule. Start by clicking on Signup to create an account. Once logged in, click on Create Event to add an event to your schedule. An event contains a name, time, location and description. Once the user creates an event,they will then be directed to thier profile where they can view thier events for the day.
 
 [Check out EventWent](https://hidden-fortress-50626.herokuapp.com/)
 ![IMG](https://i.imgur.com/UcuDYs4.png)
@@ -35,11 +35,6 @@ jwt-decode, milligram,react,react-dom,react-router-dom, react-scripts
 4. Added CSS/Milligram
 
 
-## Installation Instructions
-- Go to Github, fork the repo
-- Clone it 
-- Run NPM install in terminal
-
 ##Models
 ![IMG](https://i.imgur.com/9Q7QwAG.png)
 
@@ -65,7 +60,7 @@ Wireframes:
 
 
 ## Unresolved Problems & Major Hurdles
-- Everything involving React
+- Everything 
 - Incorporating an API
 
 

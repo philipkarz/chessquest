@@ -38,7 +38,7 @@ class Profile extends React.Component {
 	return (
 		
 		<div className='Profile'>
-			<h1>Welcome {user.name}!</h1>
+			<h1>Hello {user.name}!</h1>
 			{/* <div>
 			<img className='logo' src='http://newmail-ng.com/wp-content/uploads/2014/01/Chess-2.jpg'></img>
 			</div> */}
