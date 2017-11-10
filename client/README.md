@@ -2,7 +2,7 @@
 
 *An app that helps users schedule thier day.*
  
-In this day and age we have somany responsibilities its difficult to keep track of them all. Now thanks to EventWent you can plan your day so that you dont forget anything on your schedule. Start by clicking on Signup to create an account. Once logged in, click on Create Event to add an event to your schedule. The user will then be directed to thier profile where they can view thier events for the day.
+In this day and age we have somany responsibilities its difficult to keep track of them all. Now thanks to EventWent you can plan your day so that you dont forget anything on your schedule. Start by clicking on Signup to create an account. Once logged in, click on Create Event to add an event to your schedule. An event contains a name, time, location and description. Once the user creates an even, they will then be directed to thier profile where they can view thier events for the day.
 
 [Check out EventWent]()
 ![IMG](https://i.imgur.com/UcuDYs4.png)
