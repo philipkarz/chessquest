@@ -68,7 +68,9 @@ class App extends React.Component {
 
 					<Route path="/search" component={Search} />
 
-					<Route path="/events/:id/edit" component={EditEvent} />
+					<Route path="/events/:id/edit" render={(props) => {
+						 return <EditEvent {...props} />
+					}} />
 
 					<Route path="/events/:id" component={EventShow} />
 

@@ -17,7 +17,7 @@ class Search extends React.Component {
     //     axios({
     //         method: 'get', 
     //         url: `http://api.eventful.com/rest/events/search?...&keywords=${searchTerm}&location=${location}`,
-    //         data: this.state.fields,
+    //         
     //     })
     //     .then(res => {
     //       console.log(res.data)  
@@ -66,7 +66,7 @@ class Search extends React.Component {
                     <input type="text" placeholder="location" name='location' value={location}/>
                     <input type="text" placeholder="time" name='time' value={time}/>
                     <textarea type="text" placeholder="description" name='description' value={description}/>
-                    <button>Create Event</button>
+                    <button className='submit'>Create Event</button>
                 </form>
                 
             </div>

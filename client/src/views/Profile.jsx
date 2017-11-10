@@ -3,6 +3,7 @@ import axios from 'axios'
 import Search from './Search'
 
 
+
 // import EditProfile from './EditProfile'
 import { Link } from 'react-router-dom'
 // import vipImage from '../vip.jpg'
@@ -41,17 +42,22 @@ class Profile extends React.Component {
 			{/* <div>
 			<img className='logo' src='http://newmail-ng.com/wp-content/uploads/2014/01/Chess-2.jpg'></img>
 			</div> */}
-			{/* <img src={vipImage} alt="VIP" /> */}
+			
 			<button className='delete' onClick={this.deleteAcct.bind(this)}>Delete Account</button>
 			<Link to='/editprofile'><button> Edit Info </button></Link>
 			<div>
             <h1>Your Schedule</h1>
+			<div className='addEvent'>
+			<Link to="/search"><button className='submit'>Add Event</button></Link>
+			</div>
             {this.state.events.map(event => {
                 return (
-                    <div key={event._id}>
-                        <h2><Link to={`/events/${event._id}`} id={event._id} >- {event.name} </Link><input type="checkbox" id="confirmField"/></h2>
-                    
+                    <div className='events' key={event._id}>
+                        <h2><Link to={`/events/${event._id}`} id={event._id} >- {event.name} @ {event.time}</Link><input className='star' type="checkbox"/></h2>
                     </div>
+					
+					
+					
                 )
             })}
             </div>

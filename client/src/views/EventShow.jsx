@@ -47,7 +47,7 @@ class EventShow extends React.Component {
                     <th>Name</th>
                     <th>Location</th>
                     <th>Time</th>
-                     <th>Description</th>
+                     <th>Notes</th>
                 </tr>
                 </thead>
                 <tbody>

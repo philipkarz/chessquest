@@ -9,20 +9,20 @@ class EditEvent extends React.Component {
 
 	componentDidMount() {
         axios({
-				method: 'get', 
-				url: `/chess/events/${this.props.match.params.id}`,
+			method: 'get', 
+			url: `/chess/events/${this.props.match.params.id}`,
+		})
+		.then(res => {
+			const event = res.data
+			this.setState({
+				fields: {
+					name: event.name,
+					location: event.location,
+					time: event.time,
+					description: event.description
+				}
 			})
-			.then(res => {
-		        this.setState({
-                    fields: {
-                        name: this.props.match.params.name,
-                        location: this.props.match.params.location,
-                        time: this.props.match.params.time,
-                        description: this.props.match.params.description,
-                        
-                    }
-		        })
-			})
+		})
 	}
 
 	onInputChange(evt) {

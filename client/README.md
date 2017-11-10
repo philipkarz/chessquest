@@ -1,15 +1,16 @@
-# Planner
+# EventWent
 
 *An app that helps users schedule thier day.*
  
 Select Signup to create your account. Once logged in, click on Create Event to add an event to your schedule. The user will then be directed to thier profile where they can view thier events for the day. 
 
-[Check out Planner](https://gotripply.herokuapp.com/)
+[Check out EventWent](https://gotripply.herokuapp.com/)
 
 
 
 
 ## Technologies Used
+- HTML
 - React
 - CSS
 - JavaScript

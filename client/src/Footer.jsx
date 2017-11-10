@@ -4,7 +4,7 @@ const Footer = (props) => {
 	console.log('footer', props);
 	return (
 		<div className='Footer'>
-			<footer>@ChessQuest</footer>
+			<footer>@EventWent</footer>
 		</div>
 		
 	)

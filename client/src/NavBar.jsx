@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom'
 const NavBar = (props) => {
 	return (
 		<div className='NavBar'>
+			
 			<Link to="/">Home</Link>
+			
 			
 			{props.currentUser
 				? (
 					<span>
-
+						
 						<Link to="/profile">Profile</Link>
-	
+						
 						<Link to="/logout">Log Out</Link>
-	
-						<Link to="/search">Search</Link>
+						
+						<Link to="/search">Add Event</Link>
 						
 					</span>
 				)
