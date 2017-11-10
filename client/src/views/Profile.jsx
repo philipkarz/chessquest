@@ -12,9 +12,10 @@ class Profile extends React.Component {
 	state = { events: [] }
 
 	componentDidMount() {
+		
 		axios({
 			method: 'get',
-			url: '/chess/events'
+			url: `/chess/users/${this.props.user._id}/events`
 		}).then(res => {
 			console.log('response ', res)
 			this.setState({ events: res.data })
@@ -48,7 +49,7 @@ class Profile extends React.Component {
             {this.state.events.map(event => {
                 return (
                     <div key={event._id}>
-                        <h2><Link to={`/events/${event._id}`} id={event._id} >{event.name}, {event.time}</Link><input type="checkbox" id="confirmField"/></h2>
+                        <h2><Link to={`/events/${event._id}`} id={event._id} >- {event.name} </Link><input type="checkbox" id="confirmField"/></h2>
                     
                     </div>
                 )

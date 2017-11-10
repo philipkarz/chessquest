@@ -17,4 +17,6 @@ usersRouter.route('/:id')
 .patch(usersCtrl.update)
 .delete(usersCtrl.destroy)
 
+usersRouter.get('/:id/events', usersCtrl.userEvents)
+
 module.exports = usersRouter

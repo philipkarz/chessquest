@@ -1,10 +1,17 @@
 const User = require('../models/User.js')
+const Events = require('../models/Event.js')
 const signToken = require('../serverAuth.js').signToken
 
 module.exports = {
 	// list all users
 	index: (req, res) => {
 		
+	},
+
+	userEvents: (req, res) => {
+		Events.find({user: req.user._id}, (err, events) => {
+			res.json(events)
+		})
 	},
 
 	// get one user

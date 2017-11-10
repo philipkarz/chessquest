@@ -19,12 +19,11 @@ class SignUp extends React.Component {
 
 	onFormSubmit(evt) {
 		evt.preventDefault()
-		clientAuth.signUp(this.state.fields).then(data => {
-			console.log(data)
+		clientAuth.signUp(this.state.fields).then(user => {
+			
 			this.setState({ fields: { name: '', email: '', password: '' } })
-			if(data.success) {
-				this.props.onSignUpSuccess(data.token)
-				console.log(this.props.history)
+			if(user) {
+				this.props.onSignUpSuccess(user)
 				this.props.history.push('/profile')
 			}
 		})
